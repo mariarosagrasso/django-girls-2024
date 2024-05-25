@@ -2,10 +2,10 @@
 
 {% block content %}
     {% for post in posts %}
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-lg-4 mb-3">
             <div class="card card__post">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
                 <div class="card-body">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <a href="{% url 'post_detail' pk=post.pk %}" class="card-content">
                         <h5 class="card-title">{{ post.title }}</h5>
                         {% if post.published_date %}
@@ -18,4 +18,14 @@
             </div>
         </div>
     {% endfor %}
+        <div class="col-12 col-lg-4 mb-3">
+            <div class="card card__post">
+                <div class="card-body">
+                    <a href="{% url 'post_new' %}" class="card-add">
+                        {% include './icons/add-circle-outline.svg' %}
+                        <p>Aggiungi un nuovo post</p>
+                    </a>
+                </div>
+            </div>
+        </div>
 {% endblock %}

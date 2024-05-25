@@ -1,3 +1,15 @@
+body, p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .card__post, .card-content {
     text-decoration: none;
     color: #555;
@@ -9,7 +21,7 @@
 }
 
 .card-title {
-    color: #3875d7;
+    color: #00235b;
 }
 
 .card-content:hover .card-title {
@@ -21,11 +33,33 @@
     color: #555;
 }
 
-.top-menu, .top-menu svg {
+.top-menu.nav-link, .top-menu svg {
     color: #555;
-    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 .top-menu svg {
     width: 30px;
     height: 30px;
+    text-decoration: none;
+}
+
+.card__post {
+    height: 100%;
+}
+
+.card-add {
+    text-align: center;
+    display: block;
+    color: #555;
+    text-decoration: none;
+}
+
+.card-add svg {
+    max-width: 40%;
+    margin: 0 auto;
+    height: auto;
+    text-align: center;
+    color: #555;
+    opacity: .3;
 }
