@@ -8,7 +8,9 @@
                 <div class="card-body">
                     <a href="{% url 'post_detail' pk=post.pk %}" class="card-content">
                         <h5 class="card-title">{{ post.title }}</h5>
-                        <time>published: {{ post.published_date }}</time>
+                        {% if post.published_date %}
+                            <time>Published: {{ post.published_date }}</time>
+                        {% endif %}
                         <p class="card-text mt-3">{{ post.text|linebreaksbr|truncatechars:150 }}</p>
                     </a>
                     <a  href="{% url 'post_detail' pk=post.pk %}" class="d-inline-block mt-3"><small>Leggi di più</small></a>
