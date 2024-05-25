@@ -2,10 +2,18 @@
 
 {% block content %}
     {% for post in posts %}
-        <article>
-            <time>published: {{ post.published_date }}</time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
-        </article>
+        <div class="col-12 col-lg-4">
+            <div class="card card__post">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <a href="{% url 'post_detail' pk=post.pk %}" class="card-content">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <time>published: {{ post.published_date }}</time>
+                        <p class="card-text mt-3">{{ post.text|linebreaksbr|truncatechars:150 }}</p>
+                    </a>
+                    <a  href="{% url 'post_detail' pk=post.pk %}" class="d-inline-block mt-3"><small>Leggi di più</small></a>
+                </div>
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}
